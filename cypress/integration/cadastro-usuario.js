@@ -5,7 +5,7 @@ var chance = new Chance();
 
 let user = {email : chance.email(), name : { first : chance.first(), last : chance.last()}}
 
-describe('Cadastro', () => {
+describe('Cadastro de usuário', () => {
 
     it('Quando informo um email já em uso, então deve ser apresentado uma mensagem de erro', () => {
         cy.visit('http://automationpractice.com/index.php')
@@ -46,7 +46,7 @@ describe('Cadastro', () => {
         //confirmar registro
         cy.get('button#submitAccount').click()
 
-        //assertion de alert para
+        //assertion da url de controller tela de cadastro
         cy.url().should('include', 'controller=authentication')
     }),
     it('Quando acesso a página de registro, informo os dados e confirmo, então o registro deve ser realizado', () => {
