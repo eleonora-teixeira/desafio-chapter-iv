@@ -1,4 +1,4 @@
-Desafio do chapter iv proposto pelo agilizei bootcamp, onde há scripts de testes automatizdos em cypress, esses scripts automatizam a funcionalidade de cadastro de cliente de um e-commerce.
+Desafio do chapter iv proposto pelo agilizei bootcamp, onde há scripts de testes automatizdos em cypress, esses scripts automatizam a funcionalidade de cadastro de cliente em um e-commerce.
 
 Dentro do contexto da funcionalidade de cadastro de usuário, foram identificados quatro cenários de teste, sendo esses:
  - Preenchimento de email já em uso (inválido)
