@@ -2,7 +2,7 @@ Desafio do chapter iv proposto pelo agilizei bootcamp, onde há scripts de teste
 
 Dentro do contexto da funcionalidade de cadastro de usuário, foram identificados quatro cenários de teste, sendo esses:
  - Preenchimento de email já em uso (inválido)
- - Preenchimento de email com formato inválido (válido)
+ - Preenchimento de email com formato inválido (inválido)
  - Não preenchimento de campos obrigatórios no formulário de cadastro (inválido)
  - Preenchimento de todos os dados obrigatórios (válido)
 
