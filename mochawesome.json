@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-11T22:12:47.124Z",
+    "end": "2021-10-11T22:13:24.857Z",
+    "duration": 37733,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a9a79274-a6c5-42fc-bf2e-60b442f166b9",
+      "title": "",
+      "fullFile": "cypress/integration/cadastro.js",
+      "file": "cypress/integration/cadastro.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "63fa5ace-0d3e-46a9-9985-dd65b9666038",
+          "title": "Cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Quando informo um email já em uso, então deve ser apresentado uma mensagem de erro",
+              "fullTitle": "Cadastro Quando informo um email já em uso, então deve ser apresentado uma mensagem de erro",
+              "timedOut": null,
+              "duration": 7649,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://automationpractice.com/index.php'); //acessa tela de login /cadastro\ncy.get('a.login').click(); //preenchimento de email já cadastrado e clique no botão de registrar\ncy.get('input#email_create').type('kosew@sog.hr');\ncy.get('button#SubmitCreate').click(); //assertion de alert de erro\ncy.get('div#create_account_error').should('have.text', 'An account using this email address has already been registered. Please enter a valid password or request a new one. ');",
+              "err": {},
+              "uuid": "9d8e467c-2662-4605-9aad-f9cef1383007",
+              "parentUUID": "63fa5ace-0d3e-46a9-9985-dd65b9666038",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Quando informo um email inválido, então devo ver uma mensagem de erro",
+              "fullTitle": "Cadastro Quando informo um email inválido, então devo ver uma mensagem de erro",
+              "timedOut": null,
+              "duration": 6141,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://automationpractice.com/index.php'); //acessa tela de login /cadastro\ncy.get('a.login').click(); //preenchimento de email já cadastrado e clique no botão de registrar\ncy.get('input#email_create').type('newmail123');\ncy.get('button#SubmitCreate').click(); //assertion url da tela de cadastro\ncy.get('div#create_account_error').should('have.text', 'Invalid email address.');",
+              "err": {},
+              "uuid": "006fb7f3-2428-4ca3-a390-b835baeff503",
+              "parentUUID": "63fa5ace-0d3e-46a9-9985-dd65b9666038",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Quando não preencho informações do formulário e clico em registrar, então o cadastro não deve ser realizado",
+              "fullTitle": "Cadastro Quando não preencho informações do formulário e clico em registrar, então o cadastro não deve ser realizado",
+              "timedOut": null,
+              "duration": 6958,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://automationpractice.com/index.php'); //acessa tela de login /cadastro\ncy.get('a.login').click(); //preenchimento de email de clique no botão de registrar\ncy.get('input#email_create').type(user.email);\ncy.get('button#SubmitCreate').click(); //confirmar registro\ncy.get('button#submitAccount').click(); //assertion de alert para\ncy.url().should('include', 'controller=authentication');",
+              "err": {},
+              "uuid": "07303936-1bc2-4f3b-adc4-1b4e7c7018c2",
+              "parentUUID": "63fa5ace-0d3e-46a9-9985-dd65b9666038",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Quando acesso a página de registro, informo os dados e confirmo, então o registro deve ser realizado",
+              "fullTitle": "Cadastro Quando acesso a página de registro, informo os dados e confirmo, então o registro deve ser realizado",
+              "timedOut": null,
+              "duration": 13779,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://automationpractice.com/index.php'); //acessa tela de login /cadastro\ncy.get('a.login').click(); //preenchimento de email de clique no botão de registrar\ncy.get('input#email_create').type(user.email);\ncy.get('button#SubmitCreate').click(); //assertion de url de tela de registro\ncy.url().should('include', '#account-creation'); //preenchimento do formulário de registro\ncy.get('input#id_gender1').check();\ncy.get('input#customer_firstname').type(user.name.first);\ncy.get('input#customer_lastname').type(user.name.last);\ncy.get('input#passwd').type('Senha@123');\ncy.get('select#days').select(`${chance.integer({\n  min: 1,\n  max: 30\n})}`);\ncy.get('select#months').select(`${chance.integer({\n  min: 1,\n  max: 12\n})}`);\ncy.get('select#years').select(`${chance.integer({\n  min: 1960,\n  max: 2003\n})}`);\ncy.get('input#address1').type(chance.address());\ncy.get('input#city').type(chance.city());\ncy.get('select#id_state').select(`${chance.integer({\n  min: 1,\n  max: 20\n})}`);\ncy.get('input#postcode').type(chance.integer({\n  min: 10000,\n  max: 99999\n}));\ncy.get('input#phone_mobile').type(chance.phone());\ncy.get('input#alias').type('Alias'); //confirmar registro\ncy.get('button#submitAccount').click(); //assertion do registro\ncy.url().should('include', 'controller=my-account');\ncy.get('.account > span').should('have.text', `${user.name.first} ${user.name.last}`);",
+              "err": {},
+              "uuid": "905e9d5d-1f8c-48dd-8089-eaaa429f1a3d",
+              "parentUUID": "63fa5ace-0d3e-46a9-9985-dd65b9666038",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9d8e467c-2662-4605-9aad-f9cef1383007",
+            "006fb7f3-2428-4ca3-a390-b835baeff503",
+            "07303936-1bc2-4f3b-adc4-1b4e7c7018c2",
+            "905e9d5d-1f8c-48dd-8089-eaaa429f1a3d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 34527,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
