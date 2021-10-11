@@ -46,7 +46,7 @@ describe('Cadastro de usuário', () => {
         //confirmar registro
         cy.get('button#submitAccount').click()
 
-        //assertion da url de controller tela de cadastro
+        //assertion url da tela de cadastro
         cy.url().should('include', 'controller=authentication')
     }),
     it('Quando acesso a página de registro, informo os dados e confirmo, então o registro deve ser realizado', () => {
