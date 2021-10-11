@@ -10,4 +10,5 @@ Para a execução do projeto, é necessário ter o node.
 A execução do projeto pode ser feita de duas maneiras, seguindo os seguintes comandos:
  - "npx cypress open"
  - "npx cypress run"
+
 Onde a primeira opção irá abrir o dashboard de execução do cypress, enquanto a segunda opção irá executar a automação em modo headless, sem uma interface.
